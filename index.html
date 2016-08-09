@@ -1,0 +1,61 @@
+<html>
+<head>
+	<title>Verb Practice Game</title>
+	<style>
+		body {font-family: Verdana, san-serif; font-size: 18px; font-weight: bold; color: #fff;background-color: #7662a9;}
+		.smallish {font-size: 10px; font-weight: normal; font-style: italic;}
+		#content {width: 320px; margin: 32px auto 32px auto; text-align: center;}
+		.button1 {margin-top: 24px; font-weight: bold;}
+		.button2 {margin-top: -10px;}
+		#blanksentence {margin-top: 48px;}
+		h1 {margin: 10px 0 32px 0;}
+	</style>
+	<script>
+		function randCount() {
+			var arrSubj = ["I", "You", "You<span class=\"smallish\">(f)<\/span>", "He", "She", "We", "You<span class=\"smallish\">(p)<\/span>", "They"]
+			//var arrObj = ["me.", "you.", "him.", "her.", "us.", "you<span class=\"smallish\">(p)<\/span>.", "them."];
+
+			var ranSubj = Math.floor((Math.random() * 7) + 0);
+			//var ranObj = Math.floor((Math.random() * 6) + 0);
+
+			document.getElementById("subj").innerHTML = arrSubj[ranSubj];
+			//document.getElementById("obj").innerHTML = arrObj[ranObj];
+		}
+
+		function randVerb() {
+			var arrVerbs = ["hablar", "probar", "decir", "volar", "escuchar", "ir", "leer", "comenzar", "referir", "encender"];
+			var ranVerb = Math.floor((Math.random() * 9) + 0);
+
+			document.getElementById("verbos").innerHTML = arrVerbs[ranVerb];
+
+		}
+
+		// style page
+		// make array with pre-set infinitives at the top
+		// add a timer to answer each question
+		// make timer setable in form field
+		// make start and stop for timer
+		// add buzzer or bell for right, wrong, missed answers
+		// add score and reset
+
+	</script>
+</head>
+
+
+<body>
+	<div id="content">
+		<h1>Spanish Verb Practice</h1>
+		<h2 id="verbos"></h2>
+		<div class="button2"><button onclick="randVerb()">CHANGE VERB</button></div>
+		<div id="blanksentence">
+			<span id="subj"></span>
+			<span> __________.</span>
+		</div>
+
+		<div class="button1"><button onclick="randCount()">NEXT</button></div>
+
+	</div>
+
+	<script>randCount(); randVerb();</script>
+</body>
+<html>
